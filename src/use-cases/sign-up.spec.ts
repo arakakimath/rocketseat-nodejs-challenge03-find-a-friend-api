@@ -28,6 +28,7 @@ describe('Sign Up Use Case', () => {
 
   it('should be able to sign up an org', async () => {
     expect(org.id).toEqual(expect.any(String))
+    expect(orgsRepository.items).toHaveLength(1)
   })
 
   it('should not be able to sign up with an already used email', async () => {

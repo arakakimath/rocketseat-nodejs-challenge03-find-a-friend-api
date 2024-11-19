@@ -20,7 +20,7 @@ Find a Friend App.
 
 - [x] User can't register with an already used e-mail
 
-- [] To list pets, a city must be informed
+  [] To list pets, a city must be informed
 
 - [] An ORG must have address and whatsapp number
 
