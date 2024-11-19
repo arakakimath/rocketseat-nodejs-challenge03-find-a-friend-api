@@ -14,7 +14,7 @@ Find a Friend App.
 
 - [x] It should be possible to sign up as an ORG
 
-- [] It should be possible to sign in as an ORG
+- [x] It should be possible to sign in as an ORG
 
 # RNs (Regras de negócio)
 

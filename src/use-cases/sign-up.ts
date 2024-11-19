@@ -28,9 +28,9 @@ export class SignUpUseCase {
   }: SignUpUseCaseRequest): Promise<SignUpUseCaseResponse> {
     const password_hash = await bcrypt.hash(password, 6)
 
-    const userWithSameEmail = await this.orgsRepository.findByEmail(email)
+    const orgWithSameEmail = await this.orgsRepository.findByEmail(email)
 
-    if (userWithSameEmail) {
+    if (orgWithSameEmail) {
       throw new EmailAlreadyUsedError()
     }
 
