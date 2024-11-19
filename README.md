@@ -12,13 +12,13 @@ Find a Friend App.
 
 - [] It should be possible to get details from a pet
 
-- [] It should be possible to sign up as an ORG
+- [x] It should be possible to sign up as an ORG
 
 - [] It should be possible to sign in as an ORG
 
 # RNs (Regras de negócio)
 
-- [] User can't register with an already used e-mail
+- [x] User can't register with an already used e-mail
 
 - [] To list pets, a city must be informed
 
@@ -32,6 +32,6 @@ Find a Friend App.
 
 - [] ORGs should be identified with JWT
 
-- [] ORGs' password should be encrypted
+- [x] ORGs' password should be encrypted
 
 - [] App data should be persisted in a PostgreSQL database
