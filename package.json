@@ -1,0 +1,29 @@
+{
+  "name": "find-a-friend-api",
+  "version": "1.0.0",
+  "main": "build/server.js",
+  "scripts": {
+    "start": "node build/server.cjs",
+    "build": "tsup src --out-dir build",
+    "start:dev": "tsx watch src/server.ts"
+  },
+  "keywords": [],
+  "author": "Matheus Arakaki",
+  "license": "ISC",
+  "description": "challenge 03 from the nodejs course from rocketseat",
+  "dependencies": {
+    "@prisma/client": "5.22.0",
+    "dotenv": "16.4.5",
+    "fastify": "5.1.0",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@rocketseat/eslint-config": "2.2.2",
+    "@types/node": "22.9.0",
+    "eslint": "8.57.1",
+    "prisma": "5.22.0",
+    "tsup": "8.3.5",
+    "tsx": "4.19.2",
+    "typescript": "5.6.3"
+  }
+}
