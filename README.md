@@ -18,6 +18,8 @@ Find a Friend App.
 
 # RNs (Regras de negócio)
 
+- [] User can't register with an already used e-mail
+
 - [] To list pets, a city must be informed
 
 - [] An ORG must have address and whatsapp number
