@@ -1,6 +1,5 @@
 import { expect, describe, it, beforeEach } from 'vitest'
-import { compare, hash } from 'bcryptjs'
-import { Org } from '@prisma/client'
+import { hash } from 'bcryptjs'
 
 import { InMemoryOrgsRepository } from '@/repositories/in-memory/in-memory-orgs-repository'
 import { SignInUseCase } from './sign-in'

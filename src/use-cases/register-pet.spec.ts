@@ -1,8 +1,6 @@
 import { expect, describe, it, beforeEach } from 'vitest'
-import { compare } from 'bcryptjs'
 import { Pet } from '@prisma/client'
 
-import { EmailAlreadyUsedError } from './errors/email-already-used'
 import { RegisterPetUseCase } from './register-pet'
 import { InMemoryPetsRepository } from '@/repositories/in-memory/in-memory-pets-repository'
 

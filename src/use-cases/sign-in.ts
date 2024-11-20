@@ -14,7 +14,7 @@ interface SignInUseCaseResponse {
 }
 
 export class SignInUseCase {
-  constructor(private orgsRepository: OrgsRepository) { }
+  constructor(private orgsRepository: OrgsRepository) {}
 
   async execute({
     email,

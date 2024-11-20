@@ -1,7 +1,5 @@
 import { Pet } from '@prisma/client'
-import { compare } from 'bcryptjs'
 
-import { InvalidCredentialsError } from './errors/invalid-credentials-error'
 import { PetsRepository } from '@/repositories/pets-repository'
 
 interface RegisterPetUseCaseRequest {
@@ -22,7 +20,7 @@ interface RegisterPetUseCaseResponse {
 }
 
 export class RegisterPetUseCase {
-  constructor(private petsRepository: PetsRepository) { }
+  constructor(private petsRepository: PetsRepository) {}
 
   async execute({
     name,

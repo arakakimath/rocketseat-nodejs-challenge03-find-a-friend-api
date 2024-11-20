@@ -26,4 +26,10 @@ export class InMemoryPetsRepository implements PetsRepository {
 
     return pet
   }
+
+  async findManyByCity(city: string): Promise<Pet[]> {
+    return this.items.filter(
+      (item) => item.city.toLowerCase() === city.toLowerCase(),
+    )
+  }
 }

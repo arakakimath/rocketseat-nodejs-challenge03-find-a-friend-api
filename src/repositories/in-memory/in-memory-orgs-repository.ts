@@ -27,5 +27,4 @@ export class InMemoryOrgsRepository implements OrgsRepository {
 
     return org
   }
-
 }

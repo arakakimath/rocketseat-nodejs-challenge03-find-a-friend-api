@@ -4,9 +4,9 @@ Find a Friend App.
 
 # RFs (Requisitos funcionais)
 
-- [ ] It should be possible to register a PET
+- [x] It should be possible to register a PET
 
-- [ ] It should be possible to list all pets available for adoption in a city
+- [x] It should be possible to list all pets available for adoption in a city
 
 - [ ] It should be possible to filter pets by characteristics
 
@@ -35,3 +35,29 @@ Find a Friend App.
 - [x] ORGs' password should be encrypted
 
 - [ ] App data should be persisted in a PostgreSQL database
+
+# Resources utilized
+
+- API Server with Fastify
+
+- Validation with Zod
+
+- Environment variables
+
+- Vitest and Supertest for tests
+
+- Prisma ORM
+
+- Database with docker
+
+- Eslint for clear and padronized coding
+
+# Techniques applied
+
+- SOLID architecture
+
+- Unit tests
+
+- Use cases
+
+- Repository pattern
