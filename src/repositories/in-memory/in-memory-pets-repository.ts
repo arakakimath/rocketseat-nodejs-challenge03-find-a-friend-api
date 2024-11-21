@@ -8,7 +8,7 @@ export class InMemoryPetsRepository implements PetsRepository {
 
   async create(data: Prisma.PetUncheckedCreateInput): Promise<Pet> {
     const pet = {
-      id: randomUUID(),
+      id: data.id ? data.id : randomUUID(),
       name: data.name ?? null,
       age: data.age ?? null,
       species: data.species,
@@ -104,7 +104,18 @@ export class InMemoryPetsRepository implements PetsRepository {
         }
       }
 
-      return doesAgeMatch && doesBreedMatch && doesCoatMatch && doesColorMatch && doesSizeMatch && doesSpeciesMatch
+      return (
+        doesAgeMatch &&
+        doesBreedMatch &&
+        doesCoatMatch &&
+        doesColorMatch &&
+        doesSizeMatch &&
+        doesSpeciesMatch
+      )
     })
+  }
+
+  async findById(id: string): Promise<Pet | null> {
+    return this.items.filter((item) => item.id === id)[0] ?? null
   }
 }

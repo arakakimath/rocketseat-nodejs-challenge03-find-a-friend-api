@@ -10,7 +10,7 @@ Find a Friend App.
 
 - [x] It should be possible to filter pets by characteristics
 
-- [ ] It should be possible to get details from a pet
+- [x] It should be possible to get details from a pet
 
 - [x] It should be possible to sign up as an ORG
 
