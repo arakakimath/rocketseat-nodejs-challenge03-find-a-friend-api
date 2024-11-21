@@ -22,7 +22,7 @@ Find a Friend App.
 
 - [ ] To list pets, a city must be informed
 
-- [ ] An ORG must have address and whatsapp number
+- [x] An ORG must have address and whatsapp number
 
 - [ ] A pet must be linked to an ORG
 
@@ -30,11 +30,11 @@ Find a Friend App.
 
 # RNFs (Requisitos não-funcionais)
 
-- [ ] ORGs should be identified with JWT
+- [x] ORGs should be identified with JWT
 
 - [x] ORGs' password should be encrypted
 
-- [ ] App data should be persisted in a PostgreSQL database
+- [x] App data should be persisted in a PostgreSQL database
 
 # Resources utilized
 
@@ -51,6 +51,8 @@ Find a Friend App.
 - Database with docker
 
 - Eslint for clear and padronized coding
+
+- Fastify/jwt and Fastify/cookie for org's login
 
 # Techniques applied
 

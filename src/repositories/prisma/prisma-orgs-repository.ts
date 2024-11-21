@@ -1,7 +1,6 @@
 import { Org, Prisma } from '@prisma/client'
 import { OrgsRepository } from '../orgs-repository'
 import { prisma } from '@/lib/prisma'
-import { hash } from 'bcryptjs'
 
 export class PrismaOrgsRepository implements OrgsRepository {
   async findByEmail(email: string): Promise<Org | null> {
