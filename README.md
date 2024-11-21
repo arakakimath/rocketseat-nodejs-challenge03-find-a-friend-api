@@ -8,7 +8,7 @@ Find a Friend App.
 
 - [x] It should be possible to list all pets available for adoption in a city
 
-- [ ] It should be possible to filter pets by characteristics
+- [x] It should be possible to filter pets by characteristics
 
 - [ ] It should be possible to get details from a pet
 
