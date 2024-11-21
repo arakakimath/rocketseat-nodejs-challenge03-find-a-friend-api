@@ -24,7 +24,7 @@ Find a Friend App.
 
 - [x] An ORG must have address and whatsapp number
 
-- [ ] A pet must be linked to an ORG
+- [x] A pet must be linked to an ORG
 
 - [ ] An ORG must be signed in to access application as admin
 

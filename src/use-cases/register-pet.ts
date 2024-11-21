@@ -3,15 +3,15 @@ import { Pet } from '@prisma/client'
 import { PetsRepository } from '@/repositories/pets-repository'
 
 interface RegisterPetUseCaseRequest {
-  name?: string
-  age?: number
+  name: string | null
+  age: number | null
   species: 'cat' | 'dog'
   breed?: string
   size: 'small' | 'medium' | 'large'
   color: string
   coat: 'short' | 'medium' | 'long'
   city: string
-  description?: string
+  description: string | null
   org_id: string
 }
 
