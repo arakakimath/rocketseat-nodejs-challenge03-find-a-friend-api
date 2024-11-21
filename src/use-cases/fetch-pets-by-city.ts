@@ -11,7 +11,7 @@ interface FetchPetsByCityUseCaseResponse {
 }
 
 export class FetchPetsByCityUseCase {
-  constructor(private petsRepository: PetsRepository) { }
+  constructor(private petsRepository: PetsRepository) {}
 
   async execute({
     city,

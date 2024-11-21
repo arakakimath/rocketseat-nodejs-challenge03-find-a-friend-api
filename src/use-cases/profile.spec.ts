@@ -1,14 +1,11 @@
 import { expect, describe, it, beforeEach } from 'vitest'
-import { Pet } from '@prisma/client'
 
-import { RegisterPetUseCase } from './register-pet'
 import { InMemoryPetsRepository } from '@/repositories/in-memory/in-memory-pets-repository'
 import { GetPetProfileUseCase } from './profile'
 import { ResourceNotFoundError } from './errors/resource-not-found'
 
 let petsRepository: InMemoryPetsRepository
 let sut: GetPetProfileUseCase
-let pet: Pet
 
 describe('Register Pet Use Case', () => {
   beforeEach(async () => {

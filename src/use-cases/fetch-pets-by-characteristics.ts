@@ -16,7 +16,7 @@ interface FetchPetsByCharacteristicsUseCaseResponse {
 }
 
 export class FetchPetsByCharacteristicsUseCase {
-  constructor(private petsRepository: PetsRepository) { }
+  constructor(private petsRepository: PetsRepository) {}
 
   async execute({
     age,

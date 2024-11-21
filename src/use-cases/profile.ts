@@ -12,7 +12,7 @@ interface GetPetProfileUseCaseResponse {
 }
 
 export class GetPetProfileUseCase {
-  constructor(private petsRepository: PetsRepository) { }
+  constructor(private petsRepository: PetsRepository) {}
 
   async execute({
     id,
