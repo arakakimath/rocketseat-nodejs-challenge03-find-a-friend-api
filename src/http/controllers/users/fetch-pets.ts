@@ -13,7 +13,8 @@ export async function listPets(request: FastifyRequest, reply: FastifyReply) {
     coat: z.enum(['short', 'medium', 'long']).nullable().default(null),
   })
 
-  const { city, age, species, breed, size, color, coat } = listPetsQuerySchema.parse(request.query)
+  const { city, age, species, breed, size, color, coat } =
+    listPetsQuerySchema.parse(request.query)
 
   const fetchPetsUseCase = makeFetchPetsUseCase()
 
@@ -26,7 +27,7 @@ export async function listPets(request: FastifyRequest, reply: FastifyReply) {
       size: size === null ? undefined : size,
       color: color === null ? undefined : color,
       coat: coat === null ? undefined : coat,
-    }
+    },
   })
 
   return reply.status(200).send({ pets })

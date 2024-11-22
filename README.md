@@ -20,13 +20,13 @@ Find a Friend App.
 
 - [x] User can't register with an already used e-mail
 
-- [ ] To list pets, a city must be informed
+- [x] To list pets, a city must be informed
 
 - [x] An ORG must have address and whatsapp number
 
 - [x] A pet must be linked to an ORG
 
-- [ ] An ORG must be signed in to access application as admin
+- [x] An ORG must be signed in to access application as admin
 
 # RNFs (Requisitos não-funcionais)
 
@@ -60,6 +60,6 @@ Find a Friend App.
 
 - Unit tests
 
-- Use cases
+- Use cases architecture
 
-- Repository pattern
+- Repository pattern architecture

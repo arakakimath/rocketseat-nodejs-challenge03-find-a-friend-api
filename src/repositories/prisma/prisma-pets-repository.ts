@@ -1,5 +1,5 @@
 import { Prisma, Pet } from '@prisma/client'
-import { Characteristics, Filter, PetsRepository } from '../pets-repository'
+import { Filter, PetsRepository } from '../pets-repository'
 import { prisma } from '@/lib/prisma'
 
 export class PrismaPetsRepository implements PetsRepository {
@@ -43,6 +43,10 @@ export class PrismaPetsRepository implements PetsRepository {
   }
 
   async findById(id: string): Promise<Pet | null> {
-    throw new Error('Method not implemented.')
+    return prisma.pet.findUnique({
+      where: {
+        id,
+      },
+    })
   }
 }
