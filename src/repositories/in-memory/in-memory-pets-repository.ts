@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto'
 import { Pet, Prisma } from '@prisma/client'
 
-import { Characteristics, PetsRepository } from '../pets-repository'
+import { Characteristics, Filter, PetsRepository } from '../pets-repository'
 
 export class InMemoryPetsRepository implements PetsRepository {
   public items: Pet[] = []
@@ -27,92 +27,102 @@ export class InMemoryPetsRepository implements PetsRepository {
     return pet
   }
 
-  async findManyByCity(city: string): Promise<Pet[]> {
-    return this.items.filter(
-      (item) => item.city.toLowerCase() === city.toLowerCase(),
+  async findMany(data: Filter): Promise<Pet[]> {
+    let pets = this.items.filter(
+      (item) => item.city.toLowerCase() === data.city.toLowerCase(),
     )
-  }
 
-  async findManyByCharacteristics(data: Characteristics): Promise<Pet[]> {
-    return this.items.filter((item) => {
-      let doesAgeMatch = true
-      if (data.age && item.age) {
-        if (data.age < 1) {
-          if (item.age < 1) {
-            doesAgeMatch = true
+    if (data.filter) {
+      pets = pets.filter((item) => {
+        let doesAgeMatch = true
+        if (data.filter.age && item.age) {
+          if (data.filter.age < 1) {
+            if (item.age < 1) {
+              doesAgeMatch = true
+            } else {
+              doesAgeMatch = false
+            }
           } else {
-            doesAgeMatch = false
+            if (data.filter.age === item.age) {
+              doesAgeMatch = true
+            } else {
+              doesAgeMatch = false
+            }
           }
-        } else {
-          if (data.age === item.age) {
-            doesAgeMatch = true
+        }
+
+        let doesSpeciesMatch = true
+        if (data.filter.species && item.species) {
+          if (
+            data.filter.species.trim().toLowerCase() ===
+            item.species.trim().toLowerCase()
+          ) {
+            doesSpeciesMatch = true
           } else {
-            doesAgeMatch = false
+            doesSpeciesMatch = false
           }
         }
-      }
 
-      let doesSpeciesMatch = true
-      if (data.species && item.species) {
-        if (
-          data.species.trim().toLowerCase() ===
-          item.species.trim().toLowerCase()
-        ) {
-          doesSpeciesMatch = true
-        } else {
-          doesSpeciesMatch = false
+        let doesBreedMatch = true
+        if (data.filter.breed && item.breed) {
+          if (
+            data.filter.breed.trim().toLowerCase() ===
+            item.breed.trim().toLowerCase()
+          ) {
+            doesBreedMatch = true
+          } else {
+            doesBreedMatch = false
+          }
         }
-      }
 
-      let doesBreedMatch = true
-      if (data.breed && item.breed) {
-        if (
-          data.breed.trim().toLowerCase() === item.breed.trim().toLowerCase()
-        ) {
-          doesBreedMatch = true
-        } else {
-          doesBreedMatch = false
+        let doesSizeMatch = true
+        if (data.filter.size && item.size) {
+          if (
+            data.filter.size.trim().toLowerCase() ===
+            item.size.trim().toLowerCase()
+          ) {
+            doesSizeMatch = true
+          } else {
+            doesSizeMatch = false
+          }
         }
-      }
 
-      let doesSizeMatch = true
-      if (data.size && item.size) {
-        if (data.size.trim().toLowerCase() === item.size.trim().toLowerCase()) {
-          doesSizeMatch = true
-        } else {
-          doesSizeMatch = false
+        let doesColorMatch = true
+        if (data.filter.color && item.color) {
+          if (
+            data.filter.color.trim().toLowerCase() ===
+            item.color.trim().toLowerCase()
+          ) {
+            doesColorMatch = true
+          } else {
+            doesColorMatch = false
+          }
         }
-      }
 
-      let doesColorMatch = true
-      if (data.color && item.color) {
-        if (
-          data.color.trim().toLowerCase() === item.color.trim().toLowerCase()
-        ) {
-          doesColorMatch = true
-        } else {
-          doesColorMatch = false
+        let doesCoatMatch = true
+        if (data.filter.coat && item.coat) {
+          if (
+            data.filter.coat.trim().toLowerCase() ===
+            item.coat.trim().toLowerCase()
+          ) {
+            doesCoatMatch = true
+          } else {
+            doesCoatMatch = false
+          }
         }
-      }
 
-      let doesCoatMatch = true
-      if (data.coat && item.coat) {
-        if (data.coat.trim().toLowerCase() === item.coat.trim().toLowerCase()) {
-          doesCoatMatch = true
-        } else {
-          doesCoatMatch = false
-        }
-      }
+        return (
+          doesAgeMatch &&
+          doesBreedMatch &&
+          doesCoatMatch &&
+          doesColorMatch &&
+          doesSizeMatch &&
+          doesSpeciesMatch
+        )
+      })
+    }
 
-      return (
-        doesAgeMatch &&
-        doesBreedMatch &&
-        doesCoatMatch &&
-        doesColorMatch &&
-        doesSizeMatch &&
-        doesSpeciesMatch
-      )
-    })
+    return pets
   }
 
   async findById(id: string): Promise<Pet | null> {
